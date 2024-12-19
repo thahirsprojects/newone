@@ -1761,28 +1761,14 @@ section,
 /*--------------------------------------------------------------
 # Achivement Section
 --------------------------------------------------------------*/
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-h2 {
-  font-size: 2rem;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
 
 .achievements {
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .achievement-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
