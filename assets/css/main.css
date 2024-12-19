@@ -1761,64 +1761,103 @@ section,
 /*--------------------------------------------------------------
 # Achivement Section
 --------------------------------------------------------------*/
-/* Ensure Achievements Section Layout for Mobile */
-.achievement-item img {
-  width: 100%;
-  height: auto;
+/* Achievement Section Container */
+.achievement-container {
+  margin-top: 50px;
+  padding-left: 15px; /* Add padding for smaller screens */
+  padding-right: 15px; /* Add padding for smaller screens */
 }
 
+/* Achievement Item */
 .achievement-item {
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visual effect */
 }
 
-.overlay {
+/* Image Styling */
+.achievement-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Image */
+.achievement-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay Styling */
+.achievement-item .overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  color: white;
-  text-align: center;
-  padding: 10px;
-  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(227, 253, 255, 0.5); /* Light blue transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
+/* Display Overlay on Hover */
 .achievement-item:hover .overlay {
-  visibility: visible;
   opacity: 1;
 }
 
-/* Responsive Layout Adjustments for Mobile */
+/* Text Inside Overlay */
+.achievement-item .overlay h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Make the text color more readable */
+  margin: 0;
+  padding: 10px;
+  line-height: 1.2;
+}
+
+/* Responsive Layout for Smaller Screens */
 @media (max-width: 767px) {
-  .achievement-item {
-      margin-bottom: 20px;
-  }
-
-  .container.achievement-container {
-      padding-left: 15px;
-      padding-right: 15px;
-  }
-
-  /* Ensure the images are responsive and don't overflow */
+  /* Adjust Image Scaling */
   .achievement-item img {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
-  /* Optional: Add extra space between achievement items on mobile */
-  .achievement-item {
-      margin-bottom: 20px;
+  /* Stack the items vertically on mobile */
+  .col-12 {
+    margin-bottom: 20px; /* Add spacing between items */
+  }
+
+  /* Adjust Overlay for smaller screens */
+  .achievement-item .overlay h5 {
+    font-size: 16px; /* Make text slightly smaller on smaller screens */
+    padding: 8px;
+  }
+
+  /* Adjust Container Padding */
+  .achievement-container {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
-/* Responsive Layout for Larger Screens */
+/* Responsive Layout for Medium and Larger Screens */
 @media (min-width: 768px) {
-  .achievement-item img {
-      width: 100%;
-      height: auto;
+  /* Keep the items in 3 columns for tablets and desktops */
+  .col-md-4 {
+    margin-bottom: 30px; /* Ensure proper spacing on larger screens */
+  }
+
+  /* Keep the overlay text at a reasonable size */
+  .achievement-item .overlay h5 {
+    font-size: 20px;
+    padding: 12px;
   }
 }
 
