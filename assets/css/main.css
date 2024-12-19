@@ -1761,44 +1761,67 @@ section,
 /*--------------------------------------------------------------
 # Achivement Section
 --------------------------------------------------------------*/
-.achievement-container {
-  margin-top: 50px;
-}
-.achievement-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
+/* Ensure Achievements Section Layout for Mobile */
 .achievement-item img {
   width: 100%;
   height: auto;
-  display: block;
-  transition: transform 0.3s ease;
 }
-.achievement-item:hover img {
-  transform: scale(1.1);
+
+.achievement-item {
+  position: relative;
+  overflow: hidden;
 }
-.achievement-item .overlay {
+
+.overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(227, 253, 255, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .achievement-item:hover .overlay {
+  visibility: visible;
   opacity: 1;
 }
-.achievement-item .overlay h5 {
-  font-size: 20px;
-  font-weight: bold;
+
+/* Responsive Layout Adjustments for Mobile */
+@media (max-width: 767px) {
+  .achievement-item {
+      margin-bottom: 20px;
+  }
+
+  .container.achievement-container {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  /* Ensure the images are responsive and don't overflow */
+  .achievement-item img {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Optional: Add extra space between achievement items on mobile */
+  .achievement-item {
+      margin-bottom: 20px;
+  }
 }
+
+/* Responsive Layout for Larger Screens */
+@media (min-width: 768px) {
+  .achievement-item img {
+      width: 100%;
+      height: auto;
+  }
+}
+
 
 
 /*--------------------------------------------------------------
